@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background: #000;
+    }
+    .cube {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        transform-style: preserve-3d;
+        /* perspective: 1200px; */
+        transform: translateX(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        animation: mymove 20s infinite;
+        --step: 45deg; 
+    }
+
+    .cube div {
+        opacity: 0.5;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        font-size: 25px;
+        font-weight: bolder;
+        color: #fff;
+        position: absolute;
+        background-size: 200px 200px;
+        backface-visibility:hidden;
+    }
+
+    .plane1 {
+        background: url(./images/1.JPG);
+        transform: translateZ(100px);
+    }
+
+    .plane2 {
+        background: url(./images/2.JPG);
+        transform: translateY(100px) rotateX(-90deg);
+    }
+
+    .plane3 {
+        background: url(./images/3.JPG);
+        transform: translateZ(-100px) rotateX(180deg);
+    }
+
+    .plane4 {
+        background: url(./images/4.JPG);
+        transform: translateY(-100px) rotateX(90deg);
+    }
+
+    .plane5 {
+        background: url(./images/5.JPG);
+        transform: translateX(-100px) rotateY(-90deg);
+    }
+
+    .plane6 {
+        background: url(./images/6.JPG);
+        transform: translateX(100px) rotateY(90deg);
+    }
+    @keyframes mymove {
+        20% {
+            transform: translateX(-100px) translateY(25px) rotateX(45deg) rotateY(45deg) rotateZ(0deg);
+        }
+        40% {
+            transform: translateX(100px) translateY(50px) rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+        }
+        60% {
+            transform: translateX(200px) translateY(75px) rotateX(360deg) rotateY(0deg) rotateZ(360deg);
+        }
+        80% {
+            transform: translateX(100px) translateY(100px);
+        }
+        100% {
+            transform: translateX(0px) translateY(0px) rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+        }
+    }
+</style>
+
 <body>
-    this is my page
+    <div class="cube">
+        <div class="plane1"></div>
+        <div class="plane2"></div>
+        <div class="plane3"></div>
+        <div class="plane4"></div>
+        <div class="plane5"></div>
+        <div class="plane6"></div>
+    </div>
 </body>
+
 </html>
