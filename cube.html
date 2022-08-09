@@ -11,18 +11,10 @@
     body{
         background: #000;
     }
-    .star{
-        position: fixed;
-        width: 3px;
-        height: 3px;
-        border-radius: 1.5px;
-        background-color: #fff;
-    }
     .cube {
         width: 200px;
         height: 200px;
         position: fixed;
-        z-index: 1000;
         transform-style: preserve-3d;
         /* perspective: 1200px; */
         transform: translateX(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -109,19 +101,3 @@
 </body>
 
 </html>
-<script>
-    let starNum = 300
-    while(starNum > 1){
-        starNum--
-        let i = document.createElement("I")
-        i.className = 'star'
-        i.animate([
-            {opacity: 1,top:Math.random() * 1600 + 'px',left:Math.random() * 1600 + 'px'},
-            {opacity: 0, top: Math.random() * 1600 + 'px',left:Math.random() * 1600 + 'px'}
-        ],{
-            duration: Math.random() * 20000,
-            iterations: Infinity
-        })
-        document.querySelector("body").appendChild(i)
-    }
-</script>
