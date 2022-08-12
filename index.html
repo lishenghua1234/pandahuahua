@@ -18,87 +18,204 @@
         border-radius: 1.5px;
         background-color: #fff;
     }
-    .cube {
-        width: 200px;
-        height: 200px;
+    .cube-commen {
         position: fixed;
         z-index: 1000;
         transform-style: preserve-3d;
         /* perspective: 1200px; */
-        transform: translateX(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform: rotateX(30deg) rotateY(180deg);
         margin: auto;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
-        animation: mymove 20s infinite;
-        --step: 45deg; 
+        animation: mymove 20s ease infinite;
+        --r: 50px; 
     }
-
-    .cube div {
-        opacity: 0.5;
+    .cube{
+        width: 100px;
+        height: 100px;
+    }
+    .cube-big{
         width: 200px;
         height: 200px;
-        text-align: center;
-        line-height: 200px;
-        font-size: 25px;
-        font-weight: bolder;
-        color: #fff;
+    }
+    .cube .plane1 {
+        background-image: url(./images/m1.JPG);
+        transform: translateZ(var(--r));
+    }
+    .cube .plane2 {
+        background-image: url(./images/m2.JPG);
+        transform: translateY(var(--r)) rotateX(-90deg);
+    }
+    .cube .plane3 {
+        background-image: url(./images/m3.JPG);
+        transform: translateZ(-50px) rotateY(180deg) rotateZ(0deg);
+    }
+    .cube .plane4 {
+        background-image: url(./images/m4.JPG);
+        transform: translateY(-50px) rotateX(90deg);
+    }
+    .cube .plane5 {
+        background-image: url(./images/m5.JPG);
+        transform: translateX(-50px) rotateY(-90deg);
+    }
+    .cube .plane6 {
+        background-image: url(./images/m6.JPG);
+        transform: translateX(50px) rotateY(90deg);
+    }
+    .cube div {
+        width: 100px;
+        height: 100px;
         position: absolute;
-        background-size: 200px 200px;
         backface-visibility:hidden;
-    }
-
-    .plane1 {
-        background: url(./images/1.JPG);
-        transform: translateZ(100px);
-    }
-
-    .plane2 {
-        background: url(./images/2.JPG);
-        transform: translateY(100px) rotateX(-90deg);
-    }
-
-    .plane3 {
-        background: url(./images/3.JPG);
-        transform: translateZ(-100px) rotateX(180deg);
-    }
-
-    .plane4 {
-        background: url(./images/4.JPG);
-        transform: translateY(-100px) rotateX(90deg);
-    }
-
-    .plane5 {
-        background: url(./images/5.JPG);
-        transform: translateX(-100px) rotateY(-90deg);
-    }
-
-    .plane6 {
-        background: url(./images/6.JPG);
-        transform: translateX(100px) rotateY(90deg);
+        background-size: 100px 100px;
+        opacity: 1;
     }
     @keyframes mymove {
-        20% {
-            transform: translateX(-100px) translateY(25px) rotateX(45deg) rotateY(45deg) rotateZ(0deg);
+        0% {
+            transform: rotateX(10deg) rotateY(0deg);
         }
-        40% {
-            transform: translateX(100px) translateY(50px) rotateX(90deg) rotateY(90deg) rotateZ(0deg);
-        }
-        60% {
-            transform: translateX(200px) translateY(75px) rotateX(360deg) rotateY(0deg) rotateZ(360deg);
-        }
-        80% {
-            transform: translateX(100px) translateY(100px);
-        }
+
         100% {
-            transform: translateX(0px) translateY(0px) rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+            transform: rotateX(10deg) rotateY(1080deg);
+        }
+    }
+    .cube-big div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background-size: 200px 200px;
+        opacity: 0.2;
+    }
+    .cube-big .plane1 {
+        background-image: url(./images/m1.JPG);
+        transform: translateZ(100px);
+        animation: animationplane1 5s ease infinite;
+    }
+    .cube-big .plane2 {
+        background-image: url(./images/m2.JPG);
+        transform: translateY(100px) rotateX(-90deg);
+        animation: animationplane2 5s ease infinite;
+    }
+    .cube-big .plane3 {
+        background-image: url(./images/m3.JPG);
+        transform: translateZ(-100px) rotateY(180deg) rotateZ(0deg);
+        animation: animationplane3 5s ease infinite;
+    }
+    .cube-big .plane4 {
+        background-image: url(./images/m4.JPG);
+        transform: translateY(-100px) rotateX(90deg);
+        animation: animationplane4 5s ease infinite;
+    }
+    .cube-big .plane5 {
+        background-image: url(./images/m5.JPG);
+        transform: translateX(-100px) rotateY(-90deg);
+        animation: animationplane5 5s ease infinite;
+    }
+
+    .cube-big .plane6 {
+        background-image: url(./images/m6.JPG);
+        transform: translateX(100px) rotateY(90deg);
+        animation: animationplane6 5s ease infinite;
+    }
+    @keyframes animationplane6 {
+        40%{
+            opacity: 0.2;
+            transform: translateX(100px) rotateY(90deg);
+        }
+        80%{
+            opacity: 0.9;
+            transform: translateX(200px) rotateY(90deg);
+        }
+        100%{
+            opacity: 0.9;
+            transform: translateX(200px) rotateY(90deg);
+        }
+    }
+    @keyframes animationplane5 {
+        40%{
+            opacity: 0.2;
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        80%{
+            opacity: 0.9;
+            transform: translateX(-200px) rotateY(-90deg);
+        }
+        100%{
+            opacity: 0.9;
+            transform: translateX(-200px) rotateY(-90deg);
+        }
+    }
+    @keyframes animationplane4 {
+        40%{
+            opacity: 0.2;
+            
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        80%{
+            opacity: 0.9;
+            transform: translateY(-200px) rotateX(90deg);
+        }
+        100%{
+            opacity: 0.9;
+            transform: translateY(-200px) rotateX(90deg);
+        }
+    }
+    @keyframes animationplane3 {
+        40%{
+            opacity: 0.2;
+            transform: translateZ(-100px) rotateY(180deg) rotateZ(0deg);
+        }
+        80%{
+            opacity: 0.9;
+            transform: translateZ(-200px) rotateY(180deg) rotateZ(0deg);
+        }
+        100%{
+            opacity: 0.9;
+            transform: translateZ(-200px) rotateY(180deg) rotateZ(0deg);
+        }
+    }
+    @keyframes animationplane2 {
+        40%{
+            opacity: 0.2;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+        80%{
+            opacity: 0.9;
+            transform: translateY(200px) rotateX(-90deg); 
+        }
+        100%{
+            opacity: 0.9;
+            transform: translateY(200px) rotateX(-90deg); 
+        }
+    }
+    @keyframes animationplane1 {
+        40%{
+            opacity: 0.2;
+            transform: translateZ(100px);
+        }
+        80%{
+            opacity: 0.9;
+            transform: translateZ(200px);
+        }
+        100%{
+            opacity: 0.9;
+            transform: translateZ(200px);
         }
     }
 </style>
 
 <body>
-    <div class="cube">
+    <div class="cube cube-commen">
+        <div class="plane1"></div>
+        <div class="plane2"></div>
+        <div class="plane3"></div>
+        <div class="plane4"></div>
+        <div class="plane5"></div>
+        <div class="plane6"></div>
+    </div>
+    <div class="cube-big cube-commen">
         <div class="plane1"></div>
         <div class="plane2"></div>
         <div class="plane3"></div>
